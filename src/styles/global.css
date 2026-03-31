@@ -1,0 +1,61 @@
+/* ══════════════════════════════════════════════
+   GLOBAL.CSS
+   Solo viven aquí: variables, reset y estilos
+   del body. Los componentes Lit tienen sus
+   propios estilos encapsulados en static styles.
+   ══════════════════════════════════════════════ */
+
+/* ── Tema claro (default) ── */
+:root {
+    --bg:        #f5f2eb;
+    --surface:   #ffffff;
+    --border:    #e0d9ce;
+    --text:      #1a1a24;
+    --muted:     #88887a;
+    --accent:    #d4541a;
+    --accent2:   #2a6dd9;
+    --card-bg:   #fdfaf5;
+    --shadow:    0 2px 12px rgba(0, 0, 0, 0.06);
+
+    --font-display: 'Syne', sans-serif;
+    --font-mono:    'JetBrains Mono', monospace;
+    --radius:       4px;
+}
+
+/* ── Tema oscuro ──
+   Se activa poniendo data-theme="dark" en <html>
+   El componente theme-toggle.js hace eso        */
+[data-theme="dark"] {
+    --bg:       #0f0f14;
+    --surface:  #17171f;
+    --border:   #2a2a38;
+    --text:     #e8e4dc;
+    --muted:    #6a6a78;
+    --accent:   #ff7040;
+    --accent2:  #5b9eff;
+    --card-bg:  #1c1c26;
+    --shadow:   0 2px 16px rgba(0, 0, 0, 0.3);
+}
+
+/* ── Reset ── */
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* ── Base ── */
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background:  var(--bg);
+    color:       var(--text);
+    font-family: var(--font-mono);
+    font-size:   14px;
+    line-height: 1.6;
+    /* Transición suave al cambiar de tema */
+    transition:  background 0.3s, color 0.3s;
+    min-height:  100vh;
+}
