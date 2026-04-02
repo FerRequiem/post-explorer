@@ -17,8 +17,9 @@
     --card-bg:   #fdfaf5;
     --shadow:    0 2px 12px rgba(0, 0, 0, 0.06);
 
-    --font-display: 'Syne', sans-serif;
+    --font-display: 'Cinzel', sans-serif;
     --font-mono:    'JetBrains Mono', monospace;
+    --font-libre:    'Libre Baskerville', serif;
     --radius:       4px;
 }
 
@@ -52,10 +53,18 @@ html {
 body {
     background:  var(--bg);
     color:       var(--text);
-    font-family: var(--font-mono);
+    font-family: var(--font-libre);
     font-size:   14px;
     line-height: 1.6;
     /* Transición suave al cambiar de tema */
     transition:  background 0.3s, color 0.3s;
     min-height:  100vh;
 }
+
+/* ── Scrollbar ── */
+::-webkit-scrollbar       { width: 4px; height: 4px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: var(--border); border-radius: 2px; }
+::-webkit-scrollbar-thumb:hover { background: var(--muted); }
+
+* { scrollbar-width: thin; scrollbar-color: var(--border) transparent; }
